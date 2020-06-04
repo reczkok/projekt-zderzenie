@@ -1,0 +1,82 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title>Page Title</title>
+		<link href="strona.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+	</head>
+	<body onload="domyslneol();">
+        
+        <div id="main">
+            <div id="toolbar">
+                <img id="logo" src="logo.png" alt="Logo">
+                <p id="test">Symualcja Zderzenia Sprężystego</p>
+            </div>
+            
+            <div id="svg-target">
+                <div id="opis">
+                Poniższe narzędzie służy do symulowania jednego zderzenia sprężystego (centrlanego lub nie). Aby rozpoacząć symulajcę należy za pomocą suwaków wprowadzić wartości a następnie nacisnąć przycisk "Start". Przycisk "Reset" przywróci obiekty do stanu sprzed rozpoczęcia animacji, a przycisk "Ustawienia Domyślne" dodatkowo przywróci wartości domyślne. Obliczenia wykonane zostały na podstawie zasady zachowania pędu. Parametry można zmieniać tylko po zatrzymaniu animacj!
+                <br>
+                Wiedza oraz niektóre zasoby zaczerpnięte ze strony:
+                <a id="link" href="https://www.w3schools.com/">w3schools</a> 
+                <br>
+                Specjalne podziękowania dla Piotra Wiercigrocha za pomoc w naprawianiu błędów.
+                <br>
+                Autor: Konrad Reczko
+            </div>
+            </div>
+            
+            <div id="tools" >
+                <div id="przyciski">
+                    <button id="reset" onclick="reset_button();" class="button">Reset</button>
+                    <button id="start" onclick="start();" class="button">Start</button>
+                    <button id="start" onclick="domyslne();" class="button">Ustawienia Domyślne</button>
+                </div>
+                <div class="slidecontainer">
+                    <label class="slider_description">Położenie kuli(x):</label>
+                    <input type="range" min="7.3" max="59.9" value="6.1" step="0.1" class="slider" id="x" oninput="getx();">
+                    <p class="slider_value"><span id="xV"></span></p>
+                </div>
+                <div class="slidecontainer">
+                    <label class="slider_description">Położenie kuli(y):</label>
+                    <input type="range" min="7.3" max="42.7" value="25" step="0.1" class="slider" id="y" oninput="gety();">
+                    <p class="slider_value"><span id="yV"></span></p>
+                </div>
+                <div class="slidecontainer">
+                    <label class="slider_description">Prędkość kuli(x):</label>
+                    <input type="range" min="-1" max="1" value="0.5" step="0.01" class="slider" id="vx" oninput="getvx();">
+                    <p class="slider_value"><span id="vxV"></span> m/s</p>
+                </div>
+                <div class="slidecontainer">
+                    <label class="slider_description">Prędkość kuli(y):</label>
+                    <input type="range" min="-1" max="1" value="0" step="0.01" class="slider" id="vy" oninput="getvy();">
+                    <p class="slider_value"><span id="vyV"></span> m/s</p>
+                </div>
+                <div class="slidecontainer">
+                    <label class="slider_description">Masa pierwszej kuli:</label>
+                    <input type="range" min="0.5" max="4" value="1" step="0.1" class="slider" id="m" oninput="getm();">
+                    <p class="slider_value"><span id="mV"></span> kg</p>
+                </div>
+                <div class="slidecontainer">
+                    <label class="slider_description">Masa drugiej kuli:</label>
+                    <input type="range" min="0.5" max="4" value="1" step="0.1" class="slider" id="m2" oninput="getm2();">
+                    <p class="slider_value"><span id="m2V"></span> kg</p>
+                </div>
+                <div class="slidecontainer">
+                    <label class="slider_description">Promień pierwszej kuli:</label>
+                    <input type="range" min="0.1" max="6" value="1" step="0.1" class="slider" id="r" oninput="getr();">
+                    <p class="slider_value"><span id="rV"></span> m</p>
+                </div>
+                <div class="slidecontainer">
+                    <label class="slider_description">Promień drugiej kuli</label>
+                    <input type="range" min="0.1" max="6" value="1" step="0.1" class="slider" id="r2" oninput="getr2();">
+                    <p class="slider_value"><span id="r2V"></span> m</p>
+                </div>
+                
+            </div>
+            
+        </div>
+    <script src="java.js"></script>
+	</body>
+</html> 
